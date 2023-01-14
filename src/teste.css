@@ -1,0 +1,11 @@
+*{
+    pointer-events: none;
+    pointer-events: visible;
+    font-weight: 600;
+    border-top-left-radius: 12px;
+
+    border-bottom-left-radius: 12px;
+    display: flex;
+    justify-content:start;
+    align-items:f;
+}
