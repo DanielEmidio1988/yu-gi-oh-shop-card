@@ -2,7 +2,7 @@ import Header from "../../components/Headers/Headers"
 import { useNavigate, useParams } from "react-router-dom"
 import { useContext, useEffect, useState } from "react"
 import { GlobalContext } from "../../context/GlobalContext"
-import { Container, MainContainer, BoxDisplayCard, BoxCentralHomePage, BoxPageNumber } from "../../constants/styleGlobalPages"
+import { Container, MainContainer, BoxDisplayCard, BoxCentralHomePage, BoxPageNumber, BoxTopPage } from "../../constants/styleGlobalPages"
 import Card from "../../components/Card/Card"
 import { goToNextHomePage } from "../../routes/coordinator"
 import Filter from "../../components/Filter/Filter"
@@ -56,14 +56,16 @@ function HomePage(){
                     <Filter/>
                     <BoxCentralHomePage>
 
-                        <div>
-                            <div>
-                                {/* AVALIAR ALGUM TIPO DE ANUNCIO */}
+                        <BoxTopPage
+                        darkMode={context.darkMode}>
+                            <div className="announcementBox">
+                                <div><a href="https://www.yugioh-card.com/lat-am/pt/rulebook/index.html" target="_blank"><button>REGRAS OFICIAIS</button></a></div>                  
                             </div>
                             <div>
-                                <p>Resultados: {context.loading ? 'Carregando...' : context.search !== '' ? filterCardsbyName.length : context.cardsBase && filterCards.length}</p>
+                                <h3>{context.search === ''? 'Todos os Cards':'Resultados:'}</h3>
+                                <p>{context.loading ? 'Carregando...' : context.search !== '' ? filterCardsbyName.length : context.cardsBase && filterCards.length} produtos</p>
                             </div>
-                        </div>
+                        </BoxTopPage>
 
                         <BoxDisplayCard>
                             {context.loading ? 'Carregando' : context.search !== '' ?
@@ -96,10 +98,7 @@ function HomePage(){
                         </BoxPageNumber>   
 
                     </BoxCentralHomePage>
-
             </MainContainer>
-
-            
 
         </Container>
         </>

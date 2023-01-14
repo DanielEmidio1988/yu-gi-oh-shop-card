@@ -1,8 +1,8 @@
-import { useContext, useEffect } from "react"
+import { useContext } from "react"
 import { useNavigate } from "react-router-dom"
 import { GlobalContext } from "../../context/GlobalContext"
 import Header from "../../components/Headers/Headers"
-import { Container } from "../../constants/styleGlobalPages"
+import { Container, MainContainer, BoxDisplayCartPurchase } from "../../constants/styleGlobalPages"
 import { goToHomePage, goToPurchasePage } from "../../routes/coordinator"
 
 function CartPage(){
@@ -15,14 +15,14 @@ function CartPage(){
         <Container
         darkMode ={context.darkMode}>
 
-            <div>
-                <div>
-                    {/* ALGUM ANUNCIO */}
-                </div>
-                <div>
-                    <div>
+            <MainContainer
+            darkMode={context.darkMode}>
 
-                            <div>
+                <BoxDisplayCartPurchase
+                darkMode={context.darkMode}>
+                    <section>
+
+                            <div className="titleItensCart">
                                 <div>
                                     
                                 </div>
@@ -38,7 +38,7 @@ function CartPage(){
                             </div>
                         {context.cart.map((item)=>(
                             
-                            <div>
+                            <div className="itensCart">
                                 <div>
                                     <img src={item.card_images[0]?.image_url_small} alt={item.name}/>
                                 </div>
@@ -48,28 +48,31 @@ function CartPage(){
                                 </div>
                                 <div>
                                     <p>{item.qtd}</p>
+                                    <button>Remover</button>
                                 </div>
                                 <div>
                                     <p>{item.totalPrice.toFixed(2)}</p>
                                 </div>
-                            </div>
-                            
+                            </div>                 
                         ))}
-                        {/* DISPLAY DE CARDS COMPRADOS */}
-                    </div>
 
-                    <div>
+                        <div className="optionsCart">
+                            <button onClick={()=>goToHomePage(navigate)}>Continuar comprando</button>
+                            <input value={context.coupon} onChange={(event)=>context.setCoupon(event.target.value)} placeholder="Cupom Premiado"/>
+                        </div>
+
+                    </section>
+
+                    <section>
                         {/* DISPLAY DO TOTAL DE COMPRAS */}
                         {context.purchase.map((resume)=>(
                             <>
                             <div>
-                                <div>
+                                <div className="resumePurchase">
+                                    <h3>Resumo do Pedido</h3>
                                     <p>
                                         <span>
-                                            x {resume.qtdTotalPurchase}
-                                        </span>
-                                        <span>
-                                            {resume.qtdTotalPurchase > 1 ? 'Produtos':'Produto'}
+                                            x {resume.qtdTotalPurchase} {resume.qtdTotalPurchase > 1 ? 'Produtos':'Produto'}
                                         </span>
                                         <span>
                                             R$ {resume.totalPurchaseItems}
@@ -80,7 +83,7 @@ function CartPage(){
                                         <span>
                                             Frete
                                         </span>
-                                        <span></span>
+                                     
                                         <span>
                                             R$ {resume.freight}
                                         </span>
@@ -90,7 +93,7 @@ function CartPage(){
                                         <span>
                                             Desconto
                                         </span>
-                                        <span></span>
+                                        
                                         <span>
                                             R$ {resume.discount}
                                         </span>
@@ -100,9 +103,7 @@ function CartPage(){
                                         <span>
                                             <h3>Total</h3>
                                         </span>
-                                        <span>
-                                            
-                                        </span>
+ 
                                         <span>
                                             <h3>R$ {resume.totalPurchase}</h3>
                                         </span>
@@ -113,14 +114,11 @@ function CartPage(){
                             </div>
                             </>
                         ))}
-                    </div>
+                    </section>
 
-                </div>
-                <div>
-                    <button onClick={()=>goToHomePage(navigate)}>Continuar comprando</button>
-                </div>
+                </BoxDisplayCartPurchase>
 
-            </div>
+            </MainContainer>
 
         </Container>
         </>

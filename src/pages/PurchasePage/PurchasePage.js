@@ -1,7 +1,7 @@
 import { useContext, useEffect, useState } from "react"
 import { useNavigate } from "react-router-dom"
 import Header from "../../components/Headers/Headers"
-import { Container } from "../../constants/styleGlobalPages"
+import { Container, MainContainer, BoxPurchasePayment } from "../../constants/styleGlobalPages"
 import { GlobalContext } from "../../context/GlobalContext"
 import { goToHomePage } from "../../routes/coordinator"
 import MessagesModal from "../../components/Modal/MessagesModal/MessagesModal"
@@ -13,8 +13,6 @@ function PurchasePage(){
     const [teste,setTeste] = useState('')
 
     const finishPurchase = ()=>{
-        context.setCart([])
-        context.setPurchase([])
         context.setShowModal(true)
         context.setMessage("finishPurchase")
         
@@ -25,35 +23,46 @@ function PurchasePage(){
         <Header/>
         <Container 
         darkMode={context.darkMode}>
-            {context.showModal ? <MessagesModal/> : ''}
-            <div>
-                <h3>Forma de Pagamento</h3>
-                <select onChange={(event)=>setTeste(event.target.value)}>
-                    <option>Boleto</option>
-                    <option>Pix</option>
-                    <option value="Cartão">Cartão</option>
-                </select>
-                {teste === "Cartão" ? 
-                     <select>
-                        <option>x1</option>
-                        <option>x2</option>
-                        <option>x3</option>
-                    </select>
-                : 
-                ''}
-            </div>
+            <MainContainer
+            darkMode={context.darkMode}>
+                <BoxPurchasePayment
+                darkMode={context.darkMode}>
+                    {context.showModal ? <MessagesModal/> : ''}
+                    <section className="selectPay">
+                        <h3>Forma de Pagamento</h3>
+                        {context.purchase[0].itens.map((resume)=>(
+                            <p><span>x{resume.qtd}</span><span>{resume.name}</span><span>R$ {resume.totalPrice.toFixed(2)}</span></p>
+                        ))}
+                        <div>
+                            <select onChange={(event)=>setTeste(event.target.value)}>
+                                <option>Boleto</option>
+                                <option>Pix</option>
+                                <option value="Cartão">Cartão</option>
+                            </select>
+                            {teste === "Cartão" ? 
+                                <select>
+                                    <option>x1</option>
+                                    <option>x2</option>
+                                    <option>x3</option>
+                                </select>
+                            : 
+                            ''}
+                        </div>
+                    </section>
 
-            <div>
-                <h3>Resumo Pedido</h3>
-                {context.purchase.map((resume)=>(
-                    <p>
-                        <span>Total</span><span>R$ {resume.totalPurchase}</span>
-                        
-                    </p>
-                )          
-                )}
-                <button onClick={()=>finishPurchase()}>Finalizar Pedido</button>
-            </div>          
+                    <section className="resumePurchase">
+                        <h1>Resumo Pedido</h1>
+                        {context.purchase.map((resume)=>(
+                            <p>
+                                <span>Total</span><span>R$ {resume.totalPurchase}</span>
+                                
+                            </p>
+                        )          
+                        )}
+                        <button onClick={()=>finishPurchase()}>Finalizar Pedido</button>
+                    </section>
+            </BoxPurchasePayment>
+            </MainContainer>          
         </Container>
         </>
     )

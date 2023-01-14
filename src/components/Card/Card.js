@@ -1,12 +1,17 @@
 import { MainCard } from "./styleCard"
 import { goToDetailsPage } from "../../routes/coordinator"
 import { useNavigate } from "react-router-dom"
+import { useContext } from "react"
+import { GlobalContext } from "../../context/GlobalContext"
 
 function Card(props){
     const navigate = useNavigate()
+    const context = useContext(GlobalContext)
 
     return(
-        <MainCard onClick={()=>goToDetailsPage(navigate, props.card.id)}>
+        <MainCard 
+        onClick={()=>goToDetailsPage(navigate, props.card.id)}
+        darkMode={context.darkMode}>
                 
             <div>
                 <img src={props.card?.card_images[0]?.image_url} alt="Imagem-Carta-Yugioh"/>

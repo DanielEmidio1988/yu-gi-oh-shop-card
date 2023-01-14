@@ -4,7 +4,7 @@ import { useContext } from "react"
 import { GlobalContext } from "../../context/GlobalContext"
 import { goToHomePage } from "../../routes/coordinator"
 import { useNavigate } from "react-router-dom"
-import { Container } from "../../constants/styleGlobalPages"
+import { Container, MainContainer } from "../../constants/styleGlobalPages"
 import { BoxDisplayDetailCard } from "../../constants/styleGlobalPages"
 
 function DetailsPage(){
@@ -18,53 +18,46 @@ function DetailsPage(){
     return(
         <>
         <Header/>
+        <Container
+        darkMode={context.darkMode}>
 
-        <Container>
+            <MainContainer
+            darkMode={context.darkMode}>
 
-            <div>
-                {/* AVALIAR ALGUM TIPO DE ANUNCIO */}
-            </div>
-
-            <div>
-                <div>
-                    <span onClick={()=>goToHomePage(navigate)}>{'<'} Voltar</span>
-                </div>
-                <div>
-                    {/* ADICIONAR CARD AO CARRINHO */}
-                </div>
-            </div>
-
-
-
-            <BoxDisplayDetailCard>
+            <BoxDisplayDetailCard
+            darkMode={context.darkMode}>
             
-                    <div>
+                    <div className="InfoCard">
                             {context.cardsBase && detailsCard
                                 .map((card)=>(
                                     <>
                                     <div>
+                                        <h3 onClick={()=>goToHomePage(navigate)}>{'<'} Voltar</h3>
                                         <img src={card.card_images[0].image_url} alt="Card-Yugioh"/>
                                     </div>
                                     <div>
-                                        <h2>{card.name}</h2>
-                                        <p>{card.desc}</p>
+                                        <h1>{card.name}</h1>
+                                        <p>{card.type}</p>
+                                        <h4>Descrição:</h4>
+                                        <h5>{card.desc}</h5>
                                     </div>
                                     </>
                             ))}
                     </div>
                     
-                    <div>
+                    <div className="InfoPurchase">
                             {context.cardsBase && detailsCard
                                 .map((card)=>(
                                 <>
-                                <h2>{card.card_prices[0]?.amazon_price}</h2>
-                                    
+                                <h1>R$ {card.card_prices[0]?.amazon_price}</h1>
+                                <p>Entrega em até 15 dias</p>   
                                 <button onClick={()=>context.buyCard(card)}>Comprar</button>
                                 </>
                             ))}
                     </div>
                 
             </BoxDisplayDetailCard>
+            </MainContainer>
         </Container>
         </>
     )

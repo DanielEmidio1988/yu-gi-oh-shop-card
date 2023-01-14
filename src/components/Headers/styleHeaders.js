@@ -16,15 +16,17 @@ export const MainMenu = styled.div`
         justify-content: center;
         align-items: center;
     }
-
-    
+ 
         .boxLogo{
             img{
             width: 12vw;
-            min-width: 150px;   
+            min-width: 100px;   
+            }
+            
+            img:hover{
+                cursor: pointer
             }
         }
-    
 
     .boxSearch{
         width: 40%;

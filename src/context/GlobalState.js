@@ -52,7 +52,7 @@ function GlobalState (){
   const [lastPage, setLastPage] = useState(1) 
 
   //Daniel: Variável para gerenciar o nº de cards por página
-  const [perPage, setPerPage] = useState(20)
+  const [perPage, setPerPage] = useState(24)
 
   //Daniel: variavel para armazenar total de cadastros de usuários
   const [numberCard, setNumberCard] = useState('') 
@@ -146,6 +146,8 @@ function GlobalState (){
     setPurchase,
     formPayment,
     setFormPayment,
+    coupon, 
+    setCoupon,
     search,
     setSearch,
     searchType, 
