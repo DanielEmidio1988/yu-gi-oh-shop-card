@@ -83,6 +83,15 @@ export const MainMenu = styled.div`
         }
 
     }
+    @media screen and (min-device-width: 500px) and (max-device-width: 800px){
+        .boxMenu{
+            font-size: 12px;
+            
+            .amountCart{
+                font-size: 12px;
+            }
+        }
+    }
 
     @media screen and (max-device-width: 500px){
         flex-direction: column;

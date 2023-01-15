@@ -180,29 +180,15 @@ export const BoxDisplayCartPurchase = styled.div`
         padding-top: 4vh;
 
         button{
-            // margin-top: 2vh;
             width: 10vw;
             height: 6vh;
-            font-size: 0.6vw;
-            // font-weight: 600;
-            // color: ${props=>props.darkMode? '#D9D79E':'#fff'};
-            // border: 2px solid ${props=>props.darkMode? '#D9D79E':''};   
-            // background-color: ${props=>props.darkMode? '#727056':'#0892EB'};         
+            font-size: 0.6vw;       
         }
-
-        // button:hover{
-        //     cursor: pointer;
-        //     color: ${props=> props.darkMode? '#D9D79E':'#4D5159'};
-        //     border: 2px solid ${props=>props.darkMode ? '#D9D79E':'#22F9FA'};
-        //     background-color: ${props=>props.darkMode ? '#918F6E':'#22F9FA'};
-        // }
 
         .titleItensCart, .itensCart{
             display: flex;
             padding-left: 2vw;
             animation: fromLeft .7s .4s backwards; 
-
-
 
             button{
                 width: 8vw;
@@ -252,23 +238,6 @@ export const BoxDisplayCartPurchase = styled.div`
             }
         }
 
-        // button{
-        //     margin: 4vh 0 0 2vw;
-        //     width: 12vw;
-        //     height: 8vh;
-        //     font-size: 1.5vw;
-        //     font-weight: 600;
-            // color: ${props=>props.darkMode? '#D9D79E':'#fff'};
-            // border: 2px solid ${props=>props.darkMode? '#D9D79E':''};   
-            // background-color: ${props=>props.darkMode? '#727056':'#0892EB'};       
-        // }
-
-        // button:hover{
-        //     cursor: pointer;
-        //     color: ${props=> props.darkMode? '#D9D79E':'#4D5159'};
-        //     border: 2px solid ${props=>props.darkMode ? '#D9D79E':'#22F9FA'};
-        //     background-color: ${props=>props.darkMode ? '#918F6E':'#22F9FA'};
-        // }
     }
 
     .optionsCart{
@@ -547,22 +516,8 @@ export const BoxPurchasePayment = styled.div`
     }
 
     button{
-        // margin-top: 2vh;
-        // width: 12vw;
-        // height: 8vh;
-        font-size: 1.2vw;
-        // font-weight: 600;
-        // color: ${props=>props.darkMode? '#D9D79E':'#fff'};
-        // border: 2px solid ${props=>props.darkMode? '#D9D79E':''};   
-        // background-color: ${props=>props.darkMode? '#727056':'#0892EB'};       
+        font-size: 1.2vw;   
     }
-
-    // button:hover{
-    //     cursor: pointer;
-    //     color: ${props=> props.darkMode? '#D9D79E':'#4D5159'};
-    //     border: 2px solid ${props=>props.darkMode ? '#D9D79E':'#22F9FA'};
-    //     background-color: ${props=>props.darkMode ? '#918F6E':'#22F9FA'};
-    // }
 
     @media screen and (min-device-width: 500px) and (max-device-width: 800px){
         flex-direction: column;
@@ -711,24 +666,6 @@ export const BoxDisplayDetailCard = styled.div`
         p{
             font-size: 1.2vw;
         }
-
-        // button{
-        //     margin-top: 2vh;
-        //     width: 12vw;
-        //     height: 8vh;
-        //     font-size: 1.5vw;
-        //     font-weight: 600;
-            // color: ${props=>props.darkMode? '#D9D79E':'#fff'};
-            // border: 2px solid ${props=>props.darkMode? '#D9D79E':''};   
-            // background-color: ${props=>props.darkMode? '#727056':'#0892EB'};      
-        }
-
-        // button:hover{
-            // cursor: pointer;
-            // color: ${props=> props.darkMode? '#D9D79E':'#4D5159'};
-            // border: 2px solid ${props=>props.darkMode ? '#D9D79E':'#22F9FA'};
-            // background-color: ${props=>props.darkMode ? '#918F6E':'#22F9FA'};
-        // }
     }
 
     @keyframes fromLeft {
