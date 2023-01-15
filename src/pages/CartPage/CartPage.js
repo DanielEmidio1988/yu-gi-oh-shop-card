@@ -5,6 +5,7 @@ import Header from "../../components/Headers/Headers"
 import { Container, MainContainer, BoxDisplayCartPurchase } from "../../constants/styleGlobalPages"
 import { goToHomePage, goToPurchasePage } from "../../routes/coordinator"
 import MessagesModal from "../../components/Modal/MessagesModal/MessagesModal"
+import Footer from "../../components/Footer/Footer"
 
 function CartPage(){
     const context = useContext(GlobalContext)
@@ -21,9 +22,8 @@ function CartPage(){
 
                 <BoxDisplayCartPurchase
                 darkMode={context.darkMode}>
-                    {/* {context.showModal ? <MessagesModal/> : ''} */}
                     <section>
-
+                    {context.showModal ? <MessagesModal/> : ''}
                             <div className="titleItensCart">
                                 <div>
                                     
@@ -38,7 +38,13 @@ function CartPage(){
                                     <p>Preço</p>
                                 </div>
                             </div>
-                        {context.cardsBase && context.cart?.map((item)=>(
+                        {context.cart.length <= 0?
+                        
+                        <div className="itensCart">
+                            <h3>Carrinho Vazio</h3>
+                        </div>
+                        :
+                        context.cardsBase && context.cart?.map((item)=>(
                             
                             <div className="itensCart">
                                 <div>
@@ -49,11 +55,11 @@ function CartPage(){
                                     <p>{item.type}</p>
                                 </div>
                                 <div>
-                                    <p>{item.qtd}</p>
+                                    <p><span><button className="buttonqtd" onClick={()=>context.decreaseItem(item)}>-</button></span><span>{item.qtd}</span><button className="buttonqtd" onClick={()=>context.increaseItem(item)}>+</button><span></span></p>
                                     <button onClick={()=>context.removeCard(item)}>Remover</button>
                                 </div>
                                 <div>
-                                    <p>{item.totalPrice}</p>
+                                    <p>{item.totalPrice.toFixed(2)}</p>
                                 </div>
                             </div>                 
                         ))}
@@ -77,7 +83,7 @@ function CartPage(){
                                             x {resume.qtdTotalPurchase} {resume.qtdTotalPurchase > 1 ? 'Produtos':'Produto'}
                                         </span>
                                         <span>
-                                            R$ {resume.totalPurchaseItems}
+                                            R$ {resume.totalPurchaseItems.toFixed(2)}
                                         </span>
                                     </p>
 
@@ -107,13 +113,13 @@ function CartPage(){
                                         </span>
  
                                         <span>
-                                            <h3>R$ {resume.totalPurchase}</h3>
+                                            <h3>R$ {resume.totalPurchase.toFixed(2)}</h3>
                                         </span>
                                     </p>
 
                                 </div>
                                 <div className="buttonPurchase">
-                                <button onClick={()=>goToPurchasePage(navigate)}>Continuar</button>
+                                    {context.cart.length <=0 ? '' : <button onClick={()=>goToPurchasePage(navigate)}>Continuar</button>}
                                 </div>
                             </div>
                             </>
@@ -125,6 +131,7 @@ function CartPage(){
             </MainContainer>
 
         </Container>
+        <Footer/>
         </>
     )
 }

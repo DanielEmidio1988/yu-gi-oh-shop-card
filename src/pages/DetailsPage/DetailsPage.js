@@ -6,6 +6,8 @@ import { goToHomePage } from "../../routes/coordinator"
 import { useNavigate } from "react-router-dom"
 import { Container, MainContainer } from "../../constants/styleGlobalPages"
 import { BoxDisplayDetailCard } from "../../constants/styleGlobalPages"
+import MessagesModal from "../../components/Modal/MessagesModal/MessagesModal"
+import Footer from "../../components/Footer/Footer"
 
 function DetailsPage(){
 
@@ -26,7 +28,7 @@ function DetailsPage(){
 
             <BoxDisplayDetailCard
             darkMode={context.darkMode}>
-            
+            {context.showModal ? <MessagesModal/> : ''}
                     <div className="InfoCard">
                             {context.cardsBase && detailsCard
                                 .map((card)=>(
@@ -59,6 +61,7 @@ function DetailsPage(){
             </BoxDisplayDetailCard>
             </MainContainer>
         </Container>
+        <Footer/>
         </>
     )
 }

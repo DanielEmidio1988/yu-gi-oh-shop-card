@@ -12,6 +12,24 @@ export const Container = styled.div`
     flex-direction: column;   
     background-color: ${props=> props.darkMode ? '#2F3136' : '#202225'};
 
+    button{
+        margin-top: 2vh;
+        width: 12vw;
+        height: 8vh;
+        font-size: 1.5vw;
+        font-weight: 600;
+        color: ${props=>props.darkMode? '#D9D79E':'#fff'};
+        border: 2px solid ${props=>props.darkMode? '#D9D79E':''};   
+        background-color: ${props=>props.darkMode? '#727056':'#0892EB'};      
+    }
+
+    button:hover{
+        cursor: pointer;
+        color: ${props=> props.darkMode? '#D9D79E':'#4D5159'};
+        border: 2px solid ${props=>props.darkMode ? '#D9D79E':'#22F9FA'};
+        background-color: ${props=>props.darkMode ? '#918F6E':'#22F9FA'};
+    }
+
     @media screen and (max-device-width: 500px){
         align-items:center;
     }
@@ -121,8 +139,9 @@ export const BoxPageNumber = styled.div`
         background-color: #202225;
         color: ${props=> props.darkMode ? '#D9D79E': '#fff'};
         border: none;
-        width: 20px;
-        heigth: 100px;
+        font-size: 14px;
+        max-width: 20px;
+        height: 20px;
     }
 
     button:hover{
@@ -147,7 +166,7 @@ export const BoxDisplayCard = styled.div`
 export const BoxDisplayCartPurchase = styled.div`
     display: flex;
     width: 100%;
-    padding: 8vh 2vw 0 2vw;
+    padding: 8vh 2vw 8vh 2vw;
     justify-content: space-between;
     gap: 2vw;
     color: ${props=> props.darkMode? '#D9D79E':'#4D5159'};
@@ -161,22 +180,22 @@ export const BoxDisplayCartPurchase = styled.div`
         padding-top: 4vh;
 
         button{
-            margin-top: 2vh;
+            // margin-top: 2vh;
             width: 10vw;
             height: 6vh;
-            font-size: 0.8vw;
-            font-weight: 600;
-            color: ${props=>props.darkMode? '#D9D79E':'#fff'};
-            border: 2px solid ${props=>props.darkMode? '#D9D79E':''};   
-            background-color: ${props=>props.darkMode? '#727056':'#0892EB'};         
+            font-size: 0.6vw;
+            // font-weight: 600;
+            // color: ${props=>props.darkMode? '#D9D79E':'#fff'};
+            // border: 2px solid ${props=>props.darkMode? '#D9D79E':''};   
+            // background-color: ${props=>props.darkMode? '#727056':'#0892EB'};         
         }
 
-        button:hover{
-            cursor: pointer;
-            color: ${props=> props.darkMode? '#D9D79E':'#4D5159'};
-            border: 2px solid ${props=>props.darkMode ? '#D9D79E':'#22F9FA'};
-            background-color: ${props=>props.darkMode ? '#918F6E':'#22F9FA'};
-        }
+        // button:hover{
+        //     cursor: pointer;
+        //     color: ${props=> props.darkMode? '#D9D79E':'#4D5159'};
+        //     border: 2px solid ${props=>props.darkMode ? '#D9D79E':'#22F9FA'};
+        //     background-color: ${props=>props.darkMode ? '#918F6E':'#22F9FA'};
+        // }
 
         .titleItensCart, .itensCart{
             display: flex;
@@ -186,9 +205,15 @@ export const BoxDisplayCartPurchase = styled.div`
 
 
             button{
-                width: 4vw;
+                width: 8vw;
                 height: 2vh;
                 font-size: 10px;
+            }
+
+            .buttonqtd{
+                border-radius: 50%;
+                width: 20px;
+                height: 20px;
             }
                 
             div{
@@ -227,23 +252,23 @@ export const BoxDisplayCartPurchase = styled.div`
             }
         }
 
-        button{
-            margin: 4vh 0 0 2vw;
-            width: 12vw;
-            height: 8vh;
-            font-size: 1.5vw;
-            font-weight: 600;
-            color: ${props=>props.darkMode? '#D9D79E':'#fff'};
-            border: 2px solid ${props=>props.darkMode? '#D9D79E':''};   
-            background-color: ${props=>props.darkMode? '#727056':'#0892EB'};       
-        }
+        // button{
+        //     margin: 4vh 0 0 2vw;
+        //     width: 12vw;
+        //     height: 8vh;
+        //     font-size: 1.5vw;
+        //     font-weight: 600;
+            // color: ${props=>props.darkMode? '#D9D79E':'#fff'};
+            // border: 2px solid ${props=>props.darkMode? '#D9D79E':''};   
+            // background-color: ${props=>props.darkMode? '#727056':'#0892EB'};       
+        // }
 
-        button:hover{
-            cursor: pointer;
-            color: ${props=> props.darkMode? '#D9D79E':'#4D5159'};
-            border: 2px solid ${props=>props.darkMode ? '#D9D79E':'#22F9FA'};
-            background-color: ${props=>props.darkMode ? '#918F6E':'#22F9FA'};
-        }
+        // button:hover{
+        //     cursor: pointer;
+        //     color: ${props=> props.darkMode? '#D9D79E':'#4D5159'};
+        //     border: 2px solid ${props=>props.darkMode ? '#D9D79E':'#22F9FA'};
+        //     background-color: ${props=>props.darkMode ? '#918F6E':'#22F9FA'};
+        // }
     }
 
     .optionsCart{
@@ -445,7 +470,7 @@ export const BoxPurchasePayment = styled.div`
     width: 100%;
     display: flex;
     justify-content: space-between;
-    padding: 8vh 2vw 0 2vw;
+    padding: 8vh 2vw 8vh 2vw;
     gap: 2vw;
     color: ${props=> props.darkMode? '#D9D79E':'#4D5159'};
     
@@ -522,22 +547,22 @@ export const BoxPurchasePayment = styled.div`
     }
 
     button{
-        margin-top: 2vh;
-        width: 12vw;
-        height: 8vh;
+        // margin-top: 2vh;
+        // width: 12vw;
+        // height: 8vh;
         font-size: 1.2vw;
-        font-weight: 600;
-        color: ${props=>props.darkMode? '#D9D79E':'#fff'};
-        border: 2px solid ${props=>props.darkMode? '#D9D79E':''};   
-        background-color: ${props=>props.darkMode? '#727056':'#0892EB'};       
+        // font-weight: 600;
+        // color: ${props=>props.darkMode? '#D9D79E':'#fff'};
+        // border: 2px solid ${props=>props.darkMode? '#D9D79E':''};   
+        // background-color: ${props=>props.darkMode? '#727056':'#0892EB'};       
     }
 
-    button:hover{
-        cursor: pointer;
-        color: ${props=> props.darkMode? '#D9D79E':'#4D5159'};
-        border: 2px solid ${props=>props.darkMode ? '#D9D79E':'#22F9FA'};
-        background-color: ${props=>props.darkMode ? '#918F6E':'#22F9FA'};
-    }
+    // button:hover{
+    //     cursor: pointer;
+    //     color: ${props=> props.darkMode? '#D9D79E':'#4D5159'};
+    //     border: 2px solid ${props=>props.darkMode ? '#D9D79E':'#22F9FA'};
+    //     background-color: ${props=>props.darkMode ? '#918F6E':'#22F9FA'};
+    // }
 
     @media screen and (min-device-width: 500px) and (max-device-width: 800px){
         flex-direction: column;
@@ -625,7 +650,7 @@ export const BoxDisplayDetailCard = styled.div`
     width: 100%;
     display: flex;
     justify-content: space-between;
-    padding: 8vh 2vw 0 2vw;
+    padding: 8vh 2vw 8vh 2vw;
     gap: 2vw;
     color: ${props=> props.darkMode? '#D9D79E':'#4D5159'};
 
@@ -687,23 +712,23 @@ export const BoxDisplayDetailCard = styled.div`
             font-size: 1.2vw;
         }
 
-        button{
-            margin-top: 2vh;
-            width: 12vw;
-            height: 8vh;
-            font-size: 1.5vw;
-            font-weight: 600;
-            color: ${props=>props.darkMode? '#D9D79E':'#fff'};
-            border: 2px solid ${props=>props.darkMode? '#D9D79E':''};   
-            background-color: ${props=>props.darkMode? '#727056':'#0892EB'};      
+        // button{
+        //     margin-top: 2vh;
+        //     width: 12vw;
+        //     height: 8vh;
+        //     font-size: 1.5vw;
+        //     font-weight: 600;
+            // color: ${props=>props.darkMode? '#D9D79E':'#fff'};
+            // border: 2px solid ${props=>props.darkMode? '#D9D79E':''};   
+            // background-color: ${props=>props.darkMode? '#727056':'#0892EB'};      
         }
 
-        button:hover{
-            cursor: pointer;
-            color: ${props=> props.darkMode? '#D9D79E':'#4D5159'};
-            border: 2px solid ${props=>props.darkMode ? '#D9D79E':'#22F9FA'};
-            background-color: ${props=>props.darkMode ? '#918F6E':'#22F9FA'};
-        }
+        // button:hover{
+            // cursor: pointer;
+            // color: ${props=> props.darkMode? '#D9D79E':'#4D5159'};
+            // border: 2px solid ${props=>props.darkMode ? '#D9D79E':'#22F9FA'};
+            // background-color: ${props=>props.darkMode ? '#918F6E':'#22F9FA'};
+        // }
     }
 
     @keyframes fromLeft {

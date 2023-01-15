@@ -1,10 +1,11 @@
-import { useContext, useEffect, useState } from "react"
+import { useContext, useState } from "react"
 import { useNavigate } from "react-router-dom"
 import Header from "../../components/Headers/Headers"
 import { Container, MainContainer, BoxPurchasePayment } from "../../constants/styleGlobalPages"
 import { GlobalContext } from "../../context/GlobalContext"
-import { goToHomePage } from "../../routes/coordinator"
+import { goToCartPage } from "../../routes/coordinator"
 import MessagesModal from "../../components/Modal/MessagesModal/MessagesModal"
+import Footer from "../../components/Footer/Footer"
 
 function PurchasePage(){
 
@@ -14,8 +15,7 @@ function PurchasePage(){
 
     const finishPurchase = ()=>{
         context.setShowModal(true)
-        context.setAction("finishPurchase")
-        
+        context.setAction("finishPurchase")    
     }
 
     return(
@@ -29,6 +29,7 @@ function PurchasePage(){
                 darkMode={context.darkMode}>
                     {context.showModal ? <MessagesModal/> : ''}
                     <section className="selectPay">
+                        <h5 onClick={()=>goToCartPage(navigate)}>{'<'} Voltar</h5>
                         <h3>Forma de Pagamento</h3>
                         {context.purchase[0].itens.map((resume)=>(
                             <p><span>x{resume.qtd}</span><span>{resume.name}</span><span>R$ {resume.totalPrice.toFixed(2)}</span></p>
@@ -48,6 +49,7 @@ function PurchasePage(){
                             : 
                             ''}
                         </div>
+                        {/* <button >Voltar ao Carrinho</button> */}
                     </section>
 
                     <section className="resumePurchase">
@@ -64,6 +66,7 @@ function PurchasePage(){
             </BoxPurchasePayment>
             </MainContainer>          
         </Container>
+        <Footer/>
         </>
     )
 }

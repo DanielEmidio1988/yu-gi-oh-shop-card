@@ -75,7 +75,6 @@ export const MainMenu = styled.div`
             font-size: 1vw;
             padding: 4px;
             color: ${props=> props.darkMode ? '#D9D79E': '#08FFFF'};
-            border: 2px solid ${props=> props.darkMode ? '#D9D79E': '#08FFFF'};
             font-weight: 600;
         }
 

@@ -41,7 +41,7 @@ function Header (props){
                 <div>
                     <span><img onClick={()=>goToCartPage(navigate)} src={cart} alt="imagem-carrinho-de-compra"/></span>
                     <span className="amountCart">
-                    10{/* {context.purchase === []? 0 : context.purchase[0].qtdTotalPurchase} */}
+                    {context.purchase[0].qtdTotalPurchase}
                     </span>
                 </div>
                 <div>

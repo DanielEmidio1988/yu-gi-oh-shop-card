@@ -5,6 +5,7 @@ import { Container, MainContainer, BoxPageNotFound } from "../../constants/style
 import { GlobalContext } from "../../context/GlobalContext";
 import { goToHomePage } from "../../routes/coordinator";
 import pagenotfound from "../../assets/not-found.png"
+import Footer from "../../components/Footer/Footer"
 
 function PageNotFound (){
 
@@ -22,6 +23,7 @@ function PageNotFound (){
                 </BoxPageNotFound>
             </MainContainer>
         </Container>
+        <Footer/>
         </>
     )
 }

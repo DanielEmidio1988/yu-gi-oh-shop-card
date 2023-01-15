@@ -1,11 +1,12 @@
 import Header from "../../components/Headers/Headers"
 import { useNavigate, useParams } from "react-router-dom"
-import { useContext, useEffect, useState } from "react"
+import { useContext, useEffect} from "react"
 import { GlobalContext } from "../../context/GlobalContext"
 import { Container, MainContainer, BoxDisplayCard, BoxCentralHomePage, BoxPageNumber, BoxTopPage } from "../../constants/styleGlobalPages"
 import Card from "../../components/Card/Card"
 import { goToNextHomePage } from "../../routes/coordinator"
 import Filter from "../../components/Filter/Filter"
+import Footer from "../../components/Footer/Footer"
 
 function HomePage(){
 
@@ -102,6 +103,7 @@ function HomePage(){
             </MainContainer>
 
         </Container>
+        <Footer/>
         </>
     )
 }

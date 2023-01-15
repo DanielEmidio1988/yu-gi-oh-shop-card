@@ -11,7 +11,7 @@ function GlobalState (){
   const [cart, setCart] = useState([])
 
   //Daniel: variável para armazenar informações gerais do pedido do cliente
-  const [purchase, setPurchase] = useState([])
+  const [purchase, setPurchase] = useState([{itens:[...cart],discount:0,freight:0,qtdTotalPurchase:0,totalPurchaseItems:0,totalPurchase:0}])
 
   //Daniel: variável para armazenar forma de pagamento (modo de pagamento, parcela
   const [formPayment, setFormPayment] = useState({payment:"",portion: 1})
@@ -31,13 +31,8 @@ function GlobalState (){
   //Daniel: variável para indicar o tipo de ação para acessar algum Modal de ação
   const [action, setAction] = useState("")
 
-  // LISTA DE AÇÕES
-  //"login-modal" - modal de login do header
-
   //Daniel: variável para indicar o tipo de ação para acessar algum Modal de mensagem de status de ação
   const [message, setMessage] = useState("")
-    // LISTA DE AÇÕES
-  //"finishPurchase" - modal de compra finalizada
 
   //Daniel: variavel para ativar algum Modal
   const [showModal, setShowModal] = useState(false)
@@ -68,6 +63,11 @@ function GlobalState (){
         browserCard()
     },[pageNumber])
 
+    //Daniel: hook utilizado para atualizar o pedido de compras na atualização do carrinho
+    useEffect(()=>{
+        purchaseClient()
+    },[cart])
+
     //Daniel: função para consumir a API
     const browserCard= async ()=>{
         setLoading(true)
@@ -93,28 +93,27 @@ function GlobalState (){
 
       if(cardIntheCart){
         cardIntheCart.qtd++
-        cardIntheCart.totalPrice = cardIntheCart.qtd * cardIntheCart.card_prices[0]?.amazon_price
+        cardIntheCart.totalPrice = cardIntheCart.qtd * cardIntheCart.price
       }else{
-        auxCart.push({...newCard, qtd:1,totalPrice:Number(newCard.card_prices[0]?.amazon_price)})
+        auxCart.push({...newCard, qtd:1,totalPrice:Number(newCard.card_prices[0]?.amazon_price),price:Number(newCard.card_prices[0]?.amazon_price)})
       }
 
       setCart(auxCart)
       setAction("purchaseCard")
       setShowModal(true)
-      purchaseClient()
     }
 
     //Daniel: função para remover um card do carrinho
     const removeCard = (card)=>{
-      const auxCart = cart.filter((item)=> item !== card)
-      // const auxPurchase = purchase[0].itens.filter((item)=> item !== card)
+      const auxCart = cart.filter((item)=> item !== card)  
       setCart(auxCart)
-      // purchaseClient(auxPurchase)
+      setAction("removeCard")
+      setShowModal(true)
     }
-
 
     //Função para separar o pedido de compra do cliente
     function purchaseClient () {
+
         const auxPurchase = []
         let totalPurchase = Number(0)
         let totalPurchaseItems = Number(0)
@@ -125,19 +124,47 @@ function GlobalState (){
           totalPurchaseItems +=(cart[i].totalPrice)
           qtdTotalPurchase +=cart[i].qtd
         }
-
-        let discount = coupon === 'DEV' ? 50 && totalPurchase > 100: 0
-        let freight= totalPurchase > 150 ? 0 : 150
+        
+        let discount = coupon === 'DEV' && totalPurchase > 50 ? 25 : 0
+        let freight= totalPurchase > 25 ? 0 : 50
         totalPurchase = ((totalPurchaseItems + freight) - discount)
 
         auxPurchase.push({itens:[...cart],discount:discount,freight:freight,qtdTotalPurchase:qtdTotalPurchase,totalPurchaseItems:totalPurchaseItems,totalPurchase:totalPurchase})
         setPurchase(auxPurchase)
-        console.log("totalPurchase",totalPurchase)
-        console.log("qtdTotalPurchase",qtdTotalPurchase)
-        console.log('compra',purchase)  
+        // console.log("totalPurchase",totalPurchase)
+        // console.log("qtdTotalPurchase",qtdTotalPurchase)
+        // console.log('compra',purchase)  
+        // console.log("Carrinho", cart)
        
         return
     }
+
+
+    //Daniel: callback para aumentar o número de itens no carrinho.
+    const increaseItem =(card) =>{
+      const auxCart = [...cart]
+      for(let i=0;i<auxCart.length;i++){
+          if(auxCart[i].id === card.id){
+            auxCart[i].qtd = auxCart[i].qtd + 1
+            auxCart[i].totalPrice = auxCart[i].totalPrice + auxCart[i].price
+          }
+          
+      }
+      setCart(auxCart)
+  }
+
+  //Daniel: callback para diminuir o número de itens no carrinho.
+  const decreaseItem =(card) =>{
+      const auxCart = [...cart]
+      for(let i=0;i<auxCart.length;i++){
+        if(auxCart[i].id === card.id){
+          auxCart[i].qtd = auxCart[i].qtd - 1
+          auxCart[i].totalPrice = Number(auxCart[i].totalPrice - auxCart[i].card_prices[0]?.amazon_price)
+        }        
+      }
+      const filterItem = auxCart.filter((cart) => cart.qtd > 0)
+      setCart(filterItem) 
+  }
 
 
   return {
@@ -178,6 +205,9 @@ function GlobalState (){
     startPage,
     endPage,
     browserCard,
+    increaseItem,
+    decreaseItem,
+
   }
 
 }
