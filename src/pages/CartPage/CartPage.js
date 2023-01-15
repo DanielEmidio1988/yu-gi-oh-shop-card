@@ -4,6 +4,7 @@ import { GlobalContext } from "../../context/GlobalContext"
 import Header from "../../components/Headers/Headers"
 import { Container, MainContainer, BoxDisplayCartPurchase } from "../../constants/styleGlobalPages"
 import { goToHomePage, goToPurchasePage } from "../../routes/coordinator"
+import MessagesModal from "../../components/Modal/MessagesModal/MessagesModal"
 
 function CartPage(){
     const context = useContext(GlobalContext)
@@ -20,6 +21,7 @@ function CartPage(){
 
                 <BoxDisplayCartPurchase
                 darkMode={context.darkMode}>
+                    {/* {context.showModal ? <MessagesModal/> : ''} */}
                     <section>
 
                             <div className="titleItensCart">
@@ -36,7 +38,7 @@ function CartPage(){
                                     <p>Preço</p>
                                 </div>
                             </div>
-                        {context.cart.map((item)=>(
+                        {context.cardsBase && context.cart?.map((item)=>(
                             
                             <div className="itensCart">
                                 <div>
@@ -48,10 +50,10 @@ function CartPage(){
                                 </div>
                                 <div>
                                     <p>{item.qtd}</p>
-                                    <button>Remover</button>
+                                    <button onClick={()=>context.removeCard(item)}>Remover</button>
                                 </div>
                                 <div>
-                                    <p>{item.totalPrice.toFixed(2)}</p>
+                                    <p>{item.totalPrice}</p>
                                 </div>
                             </div>                 
                         ))}
@@ -64,8 +66,8 @@ function CartPage(){
                     </section>
 
                     <section>
-                        {/* DISPLAY DO TOTAL DE COMPRAS */}
-                        {context.purchase.map((resume)=>(
+                      
+                        {context.cardsBase && context.purchase.map((resume)=>(
                             <>
                             <div>
                                 <div className="resumePurchase">
@@ -110,7 +112,9 @@ function CartPage(){
                                     </p>
 
                                 </div>
+                                <div className="buttonPurchase">
                                 <button onClick={()=>goToPurchasePage(navigate)}>Continuar</button>
+                                </div>
                             </div>
                             </>
                         ))}

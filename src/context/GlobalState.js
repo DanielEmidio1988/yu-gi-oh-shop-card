@@ -95,37 +95,40 @@ function GlobalState (){
         cardIntheCart.qtd++
         cardIntheCart.totalPrice = cardIntheCart.qtd * cardIntheCart.card_prices[0]?.amazon_price
       }else{
-        auxCart.push({...newCard, qtd:1,totalPrice:newCard.card_prices[0]?.amazon_price})
+        auxCart.push({...newCard, qtd:1,totalPrice:Number(newCard.card_prices[0]?.amazon_price)})
       }
 
       setCart(auxCart)
+      setAction("purchaseCard")
+      setShowModal(true)
       purchaseClient()
     }
 
     //Daniel: função para remover um card do carrinho
     const removeCard = (card)=>{
-      const auxCart = card.filter((item)=> item !== card)
+      const auxCart = cart.filter((item)=> item !== card)
+      // const auxPurchase = purchase[0].itens.filter((item)=> item !== card)
       setCart(auxCart)
-      purchaseClient()
+      // purchaseClient(auxPurchase)
     }
 
 
     //Função para separar o pedido de compra do cliente
     function purchaseClient () {
         const auxPurchase = []
-        let totalPurchase = 0
-        let totalPurchaseItems = 0
-        let qtdTotalPurchase = 0
+        let totalPurchase = Number(0)
+        let totalPurchaseItems = Number(0)
+        let qtdTotalPurchase = Number(0)
 
         for (let i = 0;i<cart.length;i++){
-          totalPurchase +=(cart[i].totalPrice).toFixed(2)
-          totalPurchaseItems +=(cart[i].totalPrice).toFixed(2)
+          totalPurchase +=(cart[i].totalPrice)
+          totalPurchaseItems +=(cart[i].totalPrice)
           qtdTotalPurchase +=cart[i].qtd
         }
 
         let discount = coupon === 'DEV' ? 50 && totalPurchase > 100: 0
         let freight= totalPurchase > 150 ? 0 : 150
-        totalPurchase = ((totalPurchaseItems + freight) - discount).toFixed(2)
+        totalPurchase = ((totalPurchaseItems + freight) - discount)
 
         auxPurchase.push({itens:[...cart],discount:discount,freight:freight,qtdTotalPurchase:qtdTotalPurchase,totalPurchaseItems:totalPurchaseItems,totalPurchase:totalPurchase})
         setPurchase(auxPurchase)

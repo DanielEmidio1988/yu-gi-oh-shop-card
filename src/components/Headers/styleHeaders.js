@@ -20,7 +20,7 @@ export const MainMenu = styled.div`
         .boxLogo{
             img{
             width: 12vw;
-            min-width: 100px;   
+            min-width: 120px;   
             }
             
             img:hover{
@@ -57,6 +57,7 @@ export const MainMenu = styled.div`
     .boxMenu{
         width: 30%;
         justify-content: space-between;
+        font-size: 1vw;
 
         img{
             min-width: 20px;
@@ -71,18 +72,49 @@ export const MainMenu = styled.div`
 
         .amountCart{
             border-radius: 50%;
-            width: 24px;
-            height: 24px;
-            font-size: 14px;
+            font-size: 1vw;
             padding: 4px;
-            color: #42464D;
+            color: ${props=> props.darkMode ? '#D9D79E': '#08FFFF'};
+            border: 2px solid ${props=> props.darkMode ? '#D9D79E': '#08FFFF'};
             font-weight: 600;
-            background-color: ${props=> props.darkMode ? '#D9D79E': '#08FFFF'};
         }
 
         .amountCart{
             cursor: default;
         }
+
+    }
+
+    @media screen and (max-device-width: 500px){
+        flex-direction: column;
+        height: 20vh;
+        padding: 0;
+        
+
+        .boxSearch{
+            width: 96%;
+
+            img{
+                width: auto;
+                height: 8vh;
+            }
+            
+        }
+
+        .boxSearch{
+            width: 96%;
+        }
+
+        .boxMenu{
+            width: 80%;
+            font-size: 12px;
+            
+            .amountCart{
+                font-size: 12px;
+            }
+        }
+
+
 
     }
 

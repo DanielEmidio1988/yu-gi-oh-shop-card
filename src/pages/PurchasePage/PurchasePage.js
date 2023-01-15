@@ -14,7 +14,7 @@ function PurchasePage(){
 
     const finishPurchase = ()=>{
         context.setShowModal(true)
-        context.setMessage("finishPurchase")
+        context.setAction("finishPurchase")
         
     }
 

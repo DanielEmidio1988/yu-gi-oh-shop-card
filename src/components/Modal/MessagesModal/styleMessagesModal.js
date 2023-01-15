@@ -9,12 +9,16 @@ export const BoxMessage = styled.div`
     flex-direction: column;
     text-align: center;
     border-radius: 8px;
-    background-color: ${props=> props.darkMode ? '#4D5159' : 'white'};
+    background-color: ${props=> props.darkMode ? '#4D5159' : '#E8E8E8'};
     position: absolute;
     top: 30%;
     left: 30%;
 
     img{
         width: 150px;
+    }
+
+    button{
+        border:none;
     }
 `

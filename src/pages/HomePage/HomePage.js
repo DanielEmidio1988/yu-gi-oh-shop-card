@@ -53,9 +53,10 @@ function HomePage(){
 
             <MainContainer
             darkMode={context.darkMode}>
-                    <Filter/>
+                    
                     <BoxCentralHomePage>
-
+                    <Filter/>
+                    <div className="Home-Principal">
                         <BoxTopPage
                         darkMode={context.darkMode}>
                             <div className="announcementBox">
@@ -96,7 +97,7 @@ function HomePage(){
                             }{context.pageNumber !== context.lastPage < context.lastPage && <button onClick={()=>handlePageTurn(context.lastPage)}>{">>"}</button>
                         }
                         </BoxPageNumber>   
-
+                        </div>
                     </BoxCentralHomePage>
             </MainContainer>
 

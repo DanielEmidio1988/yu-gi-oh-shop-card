@@ -14,8 +14,13 @@ function Filter (){
     return (
         <MainFilter
         darkMode={context.darkMode}>
-            <p onClick={()=>context.setSearchType("")}>Todos os Tipos</p>
+
+            <div>
+            <h2>Filtros</h2>
+            </div>
+            
             <ul>
+                    <li onClick={()=>context.setSearchType("")}>Todos os Tipos</li>
                 {context.cardsBase && typeCards.map((card)=>(
                     <li onClick={()=>context.setSearchType(card)}>{card}</li>
                 ))}

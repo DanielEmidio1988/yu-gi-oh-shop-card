@@ -2,13 +2,11 @@ import styled from "styled-components";
 
 export const MainCard = styled.div`
     background-color: ${props=>props.darkMode? '#202225': '#fff'};
-    // background-color: #202225;
     border-radius: 12px;
     width: 180px;
     height: 300px;
-    // border: 1px solid black;
     transition: transform .3s;
-    color: ${props=>props.darkMode ? '#D9D79E':'#115DE8'};
+    color: ${props=> props.darkMode? '#D9D79E':'#4D5159'};
     font-size: 12px;
 
 

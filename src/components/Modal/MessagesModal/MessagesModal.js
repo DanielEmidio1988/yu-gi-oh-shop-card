@@ -2,7 +2,7 @@ import { useContext } from "react"
 import { useNavigate } from "react-router-dom"
 import { GlobalContext } from "../../../context/GlobalContext"
 import { BoxMessage } from "./styleMessagesModal"
-import { goToHomePage } from "../../../routes/coordinator"
+import { goToHomePage, goToCartPage } from "../../../routes/coordinator"
 import purchaseImg from "../../../assets/purchaseimg.png"
 
 function MessagesModal(){
@@ -17,10 +17,16 @@ function MessagesModal(){
         context.setCart([])
         context.setPurchase([])
     }
+
+    const purchaseCard = ()=>{
+        context.setShowModal(false)
+        context.setAction("")
+        goToHomePage(navigate)
+    }
     return(
         <>
 
-            {context.showModal && context.message === "finishPurchase" ?
+            {context.showModal && context.action === "finishPurchase" ? 
                     <BoxMessage
                     darkMode={context.darkMode}>
                         <div>
@@ -32,6 +38,19 @@ function MessagesModal(){
                         </div>
                     </BoxMessage>
             : '' }
+
+            {/* {context.showModal && context.action === "purchaseCard" ?
+                    <BoxMessage
+                    darkMode={context.darkMode}>
+                        <div>
+                            <h3>Card Adicionado ao Carrinho</h3>
+          
+                        </div>
+                        <div>
+                            <button onClick={()=>purchaseCard()}>Continuar explorando</button>
+                        </div>
+                    </BoxMessage>
+            : ''} */}
 
 
         </>
