@@ -1,6 +1,6 @@
 ## 📖 Introdução
 
-Este projeto foi desenvolvido com o propósito de desenvolver um e-commerce com vendas de Cards de Yugioh, consumindo a API [YGOPRODeck](https://ygoprodeck.com/api-guide/), que possui mais de 12.000 informações detalhadas de todos os cards do jogo.
+Yu-gi-oh Shop Card é uma aplicação web de um e-commerce com vendas de Cards de Yugioh, consumindo a API [YGOPRODeck](https://ygoprodeck.com/api-guide/), que possui mais de 12.000 informações detalhadas de todos os cards do jogo.
 
 Para acessar a aplicação, [clique aqui!](https://yu-gi-oh-shop-card.vercel.app/)
 
