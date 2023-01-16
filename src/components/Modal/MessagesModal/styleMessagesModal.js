@@ -2,7 +2,10 @@ import styled from "styled-components";
 
 export const BoxMessage = styled.div`
     width: 20vw;
-    height: 34vh;
+    height: 16vw;
+    min-width: 280px;
+    min-height: 220px;
+    font-size: 14px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -20,8 +23,8 @@ export const BoxMessage = styled.div`
 
     button{
         margin-top: 2vh;
-        width: 10vw;
-        height: 6vh;
+        width: 120px;
+        height: 50px;
         font-size: 14px;
         font-weight: 600;
         color: ${props=>props.darkMode? '#D9D79E':'#fff'};

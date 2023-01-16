@@ -96,8 +96,7 @@ export const MainMenu = styled.div`
     @media screen and (max-device-width: 500px){
         flex-direction: column;
         height: 20vh;
-        padding: 0;
-        
+        padding: 0;        
 
         .boxSearch{
             width: 96%;
@@ -105,8 +104,7 @@ export const MainMenu = styled.div`
             img{
                 width: auto;
                 height: 8vh;
-            }
-            
+            }         
         }
 
         .boxSearch{
@@ -121,9 +119,5 @@ export const MainMenu = styled.div`
                 font-size: 12px;
             }
         }
-
-
-
     }
-
 `

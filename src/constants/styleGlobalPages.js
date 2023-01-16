@@ -33,7 +33,6 @@ export const Container = styled.div`
     @media screen and (max-device-width: 500px){
         align-items:center;
     }
-
 `
 
 //Daniel: estilização do "body" das páginas
@@ -51,7 +50,8 @@ export const MainContainer = styled.div`
         border-radius: 8px;
     }
     `
-    
+
+//Daniel: estilização da página de HomePage   
 export const BoxCentralHomePage = styled.div`
     width: 100%;
     padding-top: 4vh;
@@ -67,8 +67,7 @@ export const BoxCentralHomePage = styled.div`
 
         .Home-Principal{
             width: 98%;
-        }
-        
+        }     
     }
 
     @media screen and (max-device-width: 500px){
@@ -80,7 +79,7 @@ export const BoxCentralHomePage = styled.div`
     }
     `
 
-//Daniel: estilização do Box de anuncios
+//Daniel: estilização do Box de anuncios - HomePage
 export const BoxTopPage = styled.div`
     width: 100%;
     color: ${props=> props.darkMode? '#D9D79E':'#4D5159'};
@@ -105,24 +104,13 @@ export const BoxTopPage = styled.div`
                 background-position: top center;
 
                 button{
-                    width: 20vw;
-                    height: 4vw;
-                    font-size: 1.5vw;
+                    width: 24vw;
+                    height: 6vw;
+                    font-size: 2.4vw;
                     font-weight: 600;
-                    color: #D9D79E;
-                    border: 2px solid #D9D79E;
-                    background-color: #727056;
-                }
-
-                button:hover{
-                    cursor: pointer;
-                    color: #D9D79E;
-                    border: 2px solid #D9D79E;
-                    background-color: #918F6E;
                 }
             }
         }
-
     `
 
 //Daniel: estilização do Box com os botões de paginas - "HomePage"
@@ -143,11 +131,6 @@ export const BoxPageNumber = styled.div`
         max-width: 20px;
         height: 20px;
     }
-
-    button:hover{
-        cursor: pointer;
-        background-color: #2F3136;
-    }
 `
 
 //Daniel: estilização Display de Cards - HomePage
@@ -159,7 +142,6 @@ export const BoxDisplayCard = styled.div`
     flex-wrap: wrap;
     gap: 1vw;
     padding-top: 4vh;
-
 `
 
 //Daniel: estilização da página de Carrinho
@@ -171,9 +153,7 @@ export const BoxDisplayCartPurchase = styled.div`
     gap: 2vw;
     color: ${props=> props.darkMode? '#D9D79E':'#4D5159'};
     
-
-    section:first-child{
-        
+    section:first-child{      
         width: 80%;
         background-color: ${props=> props.darkMode ? '#202225' : 'white'};
         border-radius: 12px;
@@ -197,16 +177,17 @@ export const BoxDisplayCartPurchase = styled.div`
             }
 
             .buttonqtd{
+                font-size: 14px;
                 border-radius: 50%;
                 width: 20px;
                 height: 20px;
+                margin: 0 0.5vw 0 0.5vw;
             }
                 
             div{
                 width: 25%;
                 border-bottom: 1px solid #727056;
                 padding: 2vh 0 2vh 0;
-
             }
 
             img{
@@ -214,7 +195,6 @@ export const BoxDisplayCartPurchase = styled.div`
                 min-width: 100px;
             }
         }
-
     }
 
     section:last-child{
@@ -289,7 +269,6 @@ export const BoxDisplayCartPurchase = styled.div`
             opacity: 1;
         }
     }
-
     }
 
     @media screen and (min-device-width: 500px) and (max-device-width: 800px){
@@ -325,12 +304,11 @@ export const BoxDisplayCartPurchase = styled.div`
                 }
             }
         }
-      
+
             section:last-child{
                 width: 98%;
                 padding-bottom: 2vh;
-                
-                
+                                
                 .buttonPurchase{
                     width: 90%;
                     display: flex;
@@ -355,8 +333,6 @@ export const BoxDisplayCartPurchase = styled.div`
                 }
                 
             }
-
-
     }
 
     @media screen and (max-device-width: 500px){
@@ -403,8 +379,7 @@ export const BoxDisplayCartPurchase = styled.div`
       
             section:last-child{
                 width: 98%;
-                padding-bottom: 2vh;
-                
+                padding-bottom: 2vh;              
                 
                 .buttonPurchase{
                     width: 90%;
@@ -428,8 +403,7 @@ export const BoxDisplayCartPurchase = styled.div`
                 button{
                     width: 80%;
                     font-size: 3vw;
-                }
-                
+                }         
             }
     }
     `
@@ -455,7 +429,15 @@ export const BoxPurchasePayment = styled.div`
         flex-direction: column;
 
         h3,div{
-            animation: fromCenter .7s .5s backwards; 
+            animation: fromCenter .7s .3s backwards; 
+        }
+
+        h5{
+            margin-bottom: 2vh;
+        }
+
+        h5:hover{
+            cursor: pointer;
         }
 
         h3{
@@ -464,6 +446,7 @@ export const BoxPurchasePayment = styled.div`
 
         p{
             font-size: 1vw;
+            animation: fromCenter .7s .6s backwards; 
         }
 
         div{
@@ -541,9 +524,7 @@ export const BoxPurchasePayment = styled.div`
                     width: 16vw;
                     font-size: 2vh;
                 }
-
             }
-
         }
 
         .resumePurchase{
@@ -567,8 +548,7 @@ export const BoxPurchasePayment = styled.div`
             min-height: 30vh; 
             padding-left: 4vw;
             background-image: none;
-
-            
+           
             h3{
                 font-size: 4vh;
             }
@@ -582,7 +562,6 @@ export const BoxPurchasePayment = styled.div`
                     width: 40vw;
                     font-size: 2vh;
                 }
-
             }
         }
 
@@ -595,7 +574,6 @@ export const BoxPurchasePayment = styled.div`
                 font-size: 2vh;
             }
         }
-
     }
 
     `
@@ -654,7 +632,6 @@ export const BoxDisplayDetailCard = styled.div`
         flex-direction: column;
         padding-top: 4vh;
         border-radius: 12px;
-
 
         button, h1,p{
             animation: fromCenter .7s .5s backwards; 

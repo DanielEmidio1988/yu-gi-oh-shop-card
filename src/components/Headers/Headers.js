@@ -3,7 +3,6 @@ import { goToCartPage, goToHomePage } from "../../routes/coordinator"
 import { useContext } from "react"
 import { GlobalContext } from "../../context/GlobalContext"
 import { MainMenu } from "./styleHeaders"
-import LoginModal from "../Modal/LoginModal/LoginModal"
 import user from "../../assets/user-circle.svg"
 import cart from "../../assets/cart.svg"
 import logo from "../../assets/logo-main.png"
@@ -15,8 +14,7 @@ function Header (props){
     const context = useContext(GlobalContext)
 
     const switchDarkMode = ()=>{
-        context.setDarkMode(!context.darkMode)
-        console.log('darkmode', context.darkMode)
+        context.setDarkMode(!context.darkMode)      
     }
 
     return (
@@ -35,7 +33,6 @@ function Header (props){
             <div className="boxMenu">
                 <div>
                     <span><img src={user} alt="imagem-conta-usuario"/></span><span>Olá, usuário
-                        {/* <br/>minha conta */}
                         </span>
                 </div>
                 <div>

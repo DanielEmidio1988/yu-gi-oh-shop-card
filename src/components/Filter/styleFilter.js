@@ -45,25 +45,22 @@ export const MainFilter = styled.div`
             top: 28%;
             left: 2%;
             color: ${props => props.darkMode ? '#fff':'#D9D79E'};
-            padding: 4vh 0 0 4vw;
+            padding: 4vh 0 4vh 4vw;
+            animation: fromTop .7s .4s backwards; 
 
             h4{
                 font-size: 2.5vw;
                 margin-bottom: 2vh;
             }
 
-
             li{
                 font-size: 2vw;
             }
-
         }
 
         .close{
             display: none;
         }
-
-
     }
 
     @media screen and (max-device-width: 500px){
@@ -75,14 +72,15 @@ export const MainFilter = styled.div`
         .open{
             box-shadow: 1px 1px 4px ${props=> props.darkMode? '#D9D79E':'#4D5159'};
             background-color: ${props=> props.darkMode ? '#2F3136' : '#202225'};
-            border-top-left-radius: 12px;
+            border-bottom-right-radius: 12px;
             border-top-right-radius: 12px;
             position: absolute;
-            width: 60%;
+            width: 70%;
             top: 28%;
-            left: 4%;
-            color: ${props => props.darkMode ? '#fff':'#4D5159'}
-            padding: 4vh 0 0 4vw;
+            left: 2%;
+            color: ${props => props.darkMode ? '#fff':'#D9D79E'};
+            padding: 4vh 0 4vh 4vw;
+            animation: fromTop .7s .4s backwards; 
 
             h4{
                 font-size: 4.5vw;
@@ -101,6 +99,18 @@ export const MainFilter = styled.div`
         }
 
 
+    }
+
+    @keyframes fromTop {
+        from{
+            opacity: 0;
+            transform: translateY(-20px);
+        }
+    
+        to{
+            opacity: 1;
+            transform: translateY(0);
+        }
     }
  
 

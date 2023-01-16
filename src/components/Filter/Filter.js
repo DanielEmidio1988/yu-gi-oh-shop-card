@@ -26,7 +26,8 @@ function Filter (){
             <div className={active ? 'open' : 'close'}>
                
                 <ul>
-                        <li className='closeMenu'><h4 onClick={()=>setActive(false)}>Fechar</h4></li>                    
+                        <li className='closeMenu'><h4 onClick={()=>setActive(false)}>Fechar</h4></li> 
+                        <li><b>Por Tipo</b></li>                   
                         <li onClick={()=>searchCard("")}>Todos os Tipos</li>
                     {context.cardsBase && typeCards.map((card)=>(
                         <li onClick={()=>searchCard(card)}>{card}</li>
@@ -34,36 +35,7 @@ function Filter (){
                 </ul>
             </div>
             </>
-            {/* <div className={active ? 'icon iconActive':'icon'} onClick={()=>ToggleMode()}>
-                <div className="hamburguer hamburguer icon"></div>
-            </div>
-            <div className={active ? 'menu menuOpen' : 'menu menuClose' }>
-                <div>
-                    <div className="list">
-                        <ul className="listItens">
-                            <li onClick={()=>context.setSearchType("")}>Todos os Tipos</li>
-                        {context.cardsBase && typeCards.map((card)=>(
-                            <li onClick={()=>context.setSearchType(card)}>{card}</li>
-                        ))}
-                        </ul>
-                    </div>
-                </div>
-            </div> */}
-
-            {/* 
-            <h2>Filtros</h2>
-            </div>
-            
-            <ul>
-                    <li onClick={()=>context.setSearchType("")}>Todos os Tipos</li>
-                {context.cardsBase && typeCards.map((card)=>(
-                    <li onClick={()=>context.setSearchType(card)}>{card}</li>
-                ))}
-            </ul> */}
-            
-
-
-
+    
         </MainFilter>
     )
 }
