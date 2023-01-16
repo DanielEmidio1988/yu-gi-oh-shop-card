@@ -1,8 +1,8 @@
 ## 📖 Introdução
 
-Este projeto foi desenvolvido com o propósito de desenvolver um e-commerce com vendas de Cards de Yugioh, consumindo a API ![YGOPRODeck](https://ygoprodeck.com/api-guide/), que possui mais de 12.000 informações detalhadas de todos os cards do jogo.
+Este projeto foi desenvolvido com o propósito de desenvolver um e-commerce com vendas de Cards de Yugioh, consumindo a API [YGOPRODeck](https://ygoprodeck.com/api-guide/), que possui mais de 12.000 informações detalhadas de todos os cards do jogo.
 
-Para acessar a aplicação, clique aqui!
+Para acessar a aplicação, [clique aqui!](https://yu-gi-oh-shop-card.vercel.app/)
 
 ## 📄 Descrição
 . Ao abrir a aplicação, você será direcionado a página principal, com a listagem de todos os cards disponiveis, sendo renderizado 24 cards por página.
