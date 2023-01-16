@@ -6,10 +6,15 @@ Para acessar a aplicação, [clique aqui!](https://yu-gi-oh-shop-card.vercel.app
 
 ## 📄 Descrição
 . Ao abrir a aplicação, você será direcionado a página principal, com a listagem de todos os cards disponiveis, sendo renderizado 24 cards por página.
+
 . Ao clicar em cada Card, você será direcionado a uma página que contém todas as informações básicas do Card como: nome, tipo e descrição. Nesta mesma tela, você poderá comprar o Card.
+
 . Na página de Carrinho, você poderá aumentar, diminuir ou remover a quantidade de itens no carrinho. Com o cupom 'DEV', você terá o desconto de R$ 25 para compras acima de R$ 50. Para compras acima de R$ 25, o frete é gratuito.
+
 . Na página de Fechamento de Compra, você poderá finalizar a compra e o carrinho e o pedido de compras serão zerados. 
+
 . Aplicação totalmente responsiva em Desktop, Tablet e Celulares.
+
 . Aplicação possui modo DarkMode.
 
 ## 💻 Tecnologias 
