@@ -131,10 +131,6 @@ function GlobalState (){
 
         auxPurchase.push({itens:[...cart],discount:discount,freight:freight,qtdTotalPurchase:qtdTotalPurchase,totalPurchaseItems:totalPurchaseItems,totalPurchase:totalPurchase})
         setPurchase(auxPurchase)
-        // console.log("totalPurchase",totalPurchase)
-        // console.log("qtdTotalPurchase",qtdTotalPurchase)
-        // console.log('compra',purchase)  
-        // console.log("Carrinho", cart)
        
         return
     }

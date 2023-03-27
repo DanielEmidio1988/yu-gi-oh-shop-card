@@ -2,15 +2,62 @@
 
 Este projeto foi desenvolvido com o propósito de desenvolver um e-commerce com vendas de Cards de Yugioh, consumindo a API ![YGOPRODeck](https://ygoprodeck.com/api-guide/), que possui mais de 12.000 informações detalhadas de todos os cards do jogo.
 
-Para acessar a aplicação, clique aqui!
+## 🔗Link de Acesso
+- Deploy Vercel: [clique aqui!](https://yu-gi-oh-shop-card.vercel.app/).
+- Backend: Em breve
 
-## 📄 Descrição
-. Ao abrir a aplicação, você será direcionado a página principal, com a listagem de todos os cards disponiveis, sendo renderizado 24 cards por página.
-. Ao clicar em cada Card, você será direcionado a uma página que contém todas as informações básicas do Card como: nome, tipo e descrição. Nesta mesma tela, você poderá comprar o Card.
-. Na página de Carrinho, você poderá aumentar, diminuir ou remover a quantidade de itens no carrinho. Com o cupom 'DEV', você terá o desconto de R$ 25 para compras acima de R$ 50. Para compras acima de R$ 25, o frete é gratuito.
-. Na página de Fechamento de Compra, você poderá finalizar a compra e o carrinho e o pedido de compras serão zerados. 
-. Aplicação totalmente responsiva em Desktop, Tablet e Celulares.
-. Aplicação possui modo DarkMode.
+## 👥Equipe
+| [<img src="https://avatars.githubusercontent.com/u/111311678?v=4" width=115><br><sub>Daniel Emidio</sub>](https://github.com/DanielEmidio1988) |
+| :---: |
+
+## 🧭Status do Projeto
+- ⏳Em andamento: Back-End
+
+## 📄 Concepção do Projeto
+
+### Instalando
+```bash
+# Instalando dependências
+npm install
+
+# executando o projeto
+npm start
+```
+
+### Layout Mobile
+
+| <img src="./src/assets/readme/homepagemobile.png" width=200><br><sub>Home Page</sub> | <img src="./src/assets/readme/detailspagemobile-.png" width=200><br><sub>Detalhes</sub> |
+| :---: | :---: |
+
+### Layout Desktop
+
+| <img src="./src/assets/readme/homepagedesktop.png" width=200><br><sub>Home Page</sub> | <img src="./src/assets/readme/detailspagedesktop-.png" width=200><br><sub>Detalhes</sub> |
+| :---: | :---: |
+
+### Layout Destop *DarkMode
+
+| <img src="./src/assets/readme/homepagedesktopdark.png" width=200><br><sub>Home Page</sub> | <img src="./src/assets/readme/detailspagedesktopdark-.png" width=200><br><sub>Detalhes</sub> |
+| :---: | :---: |
+
+### Funcionalidades
+```bash
+. Listagem: Ao abrir a aplicação, você será direcionado a página principal, com a listagem de todos os cards disponiveis, sendo renderizado 24 cards por página.
+. Detalhe: Cada card possui informações detalhadas sobre seus atributos, efeitos, entre outros que podem ser acessiveis ao clicar sobre o Card que deseja visualizar. O mesmo recurso permite adicionar o produto ao carrinho.
+. Carrinho: Na página de Carrinho, você poderá aumentar, diminuir ou remover a quantidade de itens no carrinho. Com o cupom 'DEV', você terá o desconto de R$ 25 para compras acima de R$ 50. Para compras acima de R$ 25, o frete é gratuito.
+. Compra: Na página de Fechamento de Compra, você poderá finalizar a compra e o carrinho e o pedido de compras serão finalizados. 
+. DarkMode: função localizada no cabeçalho para alternar o tema da aplicação DarkMode ON/OFF;
+. Responsividade: Aplicação totalmente responsiva para Desktop, Tablet e Celulares.
+```
+
+### Bibliotecas Utilizadas
+
+```bash
+styled-components
+axios
+react-router-dom
+```
+## 💡Programas utilizados:
+- VSCode
 
 ## 💻 Tecnologias 
 
@@ -18,18 +65,9 @@ Para acessar a aplicação, clique aqui!
 ![HTML](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)
 ![Javascript](https://img.shields.io/badge/JavaScript-323330?style=for-the-badge&logo=javascript&logoColor=F7DF1E)
 ![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
+![React Router](https://img.shields.io/badge/React_Router-CA4245?style=for-the-badge&logo=react-router&logoColor=white)
+![Styled-Components](https://img.shields.io/badge/styled--components-DB7093?style=for-the-badge&logo=styled-components&logoColor=white)
 ![Git](https://img.shields.io/badge/GIT-E44C30?style=for-the-badge&logo=git&logoColor=white)
-
-## ⚒️ Livrarias Utilizadas
-
-### Todo Sistema
-- npm install: Para instalação;
-- npm start: Para execução, na pasta back e front separadamentes.
-
-### Front-End
-- npm install styled-components
-- npm install axios
-- npm install react-router-react
 
 
 ## 📫 Contato
