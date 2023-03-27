@@ -1,7 +1,8 @@
 ## 📖 Introdução
 
-Este projeto foi desenvolvido com o propósito de desenvolver um e-commerce com vendas de Cards de Yugioh, consumindo a API ![YGOPRODeck](https://ygoprodeck.com/api-guide/), que possui mais de 12.000 informações detalhadas de todos os cards do jogo.
+Yu-gi-oh Shop Card é uma aplicação web de um e-commerce com vendas de Cards de Yugioh, consumindo a API [YGOPRODeck](https://ygoprodeck.com/api-guide/), que possui mais de 12.000 informações detalhadas de todos os cards do jogo.
 
+<<<<<<< HEAD
 ## 🔗Link de Acesso
 - Deploy Vercel: [clique aqui!](https://yu-gi-oh-shop-card.vercel.app/).
 - Backend: Em breve
@@ -58,6 +59,22 @@ react-router-dom
 ```
 ## 💡Programas utilizados:
 - VSCode
+=======
+Para acessar a aplicação, [clique aqui!](https://yu-gi-oh-shop-card.vercel.app/)
+
+## 📄 Descrição
+. Ao abrir a aplicação, você será direcionado a página principal, com a listagem de todos os cards disponiveis, sendo renderizado 24 cards por página.
+
+. Ao clicar em cada Card, você será direcionado a uma página que contém todas as informações básicas do Card como: nome, tipo e descrição. Nesta mesma tela, você poderá comprar o Card.
+
+. Na página de Carrinho, você poderá aumentar, diminuir ou remover a quantidade de itens no carrinho. Com o cupom 'DEV', você terá o desconto de R$ 25 para compras acima de R$ 50. Para compras acima de R$ 25, o frete é gratuito.
+
+. Na página de Fechamento de Compra, você poderá finalizar a compra e o carrinho e o pedido de compras serão zerados. 
+
+. Aplicação totalmente responsiva em Desktop, Tablet e Celulares.
+
+. Aplicação possui modo DarkMode.
+>>>>>>> e557b268fd2fdd0a42f72fe476d82f228a8405ff
 
 ## 💻 Tecnologias 
 
