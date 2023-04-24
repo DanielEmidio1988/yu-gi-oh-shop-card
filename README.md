@@ -59,7 +59,6 @@ axios
 react-router-dom
 ```
 
-
 ## 💡Programas utilizados:
 - VSCode
 
